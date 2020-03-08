@@ -1,6 +1,10 @@
-const mongoose = require('mongoose')
-mongoose.Promise = global.Promise
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
 
-const connect = (url) => Promise.reject()
+const connect = url => {
+  return mongoose.connect(url, {
+    useNewUrlParser: true
+  });
+};
 
-module.exports = connect
+module.exports = connect;
